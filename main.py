@@ -4,6 +4,7 @@ import pandas as pd ### not in requirements file - need to add this
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 LGPS_list=['LPelTilt','LHipFlex','LKneeFlex','LAnkDors',
            'LPelObl','LHipAbd','LPelRot','LHipRot','LFootProg']
 RGPS_list=['RPelTilt','RHipFlex','RKneeFlex','RAnkDors',
@@ -30,13 +31,14 @@ def rms(data):
 
 def load_patient_file(path):
     # code to load data goes here
-    pass
+    State.Patient = pd.read_excel(path)
+    #print(State.patient)
+    #return State.patient
 
     
 def load_control_file(path):
-    # code to load data goes here
-    pass
-
+    State.control = pd.read_excel(path)
+    #return State.control
     
 def calc_GPS():
     # code to load data goes here
