@@ -31,8 +31,7 @@ def rms(data):
 
 def load_patient_file(path):
     # code to load data goes here
-    State.Patient = pd.read_excel(path)
-    #print(State.patient)
+    State.patient = pd.read_excel(path)
     #return State.patient
 
     
