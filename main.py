@@ -14,6 +14,7 @@ GPS_list=['LPelTilt','LHipFlex','LKneeFlex','LAnkDors',
            'RHipAbd','RHipRot','RFootProg']
 
 # experimenting with GIT
+# adding nothing
 
 class State:
     patient = []
