@@ -28,12 +28,16 @@ def rms(data):
     
 
 def load_patient_file(path):
+    PatientA= "PatientA.xlsx"
+    df=pd.read_excel(PatientA)
     # code to load data goes here
     pass
 
     
 def load_control_file(path):
     # code to load data goes here
+    filename_control= "Control.xslx"
+    df=pd.read_excel(Control)
     pass
 
     
@@ -80,6 +84,8 @@ def show_graph(path):
     # path is the name of the angle from the drop down list
     fig,ax = plt.subplots()
     # your code to plot 3 line (patient left in red, patient right in green, control in blue)
+    
+    
 
     State.ui.plot(fig) # this will send the plot to the canvas
     
