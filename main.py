@@ -1,4 +1,4 @@
-#experimenting
+#Task file
 
 from ui import Ui, UiElement
 import pandas as pd ### not in requirements file - need to add this
@@ -26,16 +26,18 @@ def rms(data):
     sq_sum=0
     for i in range(len(data)):
         sq_sum=sq_sum+ np.power((data[i]),2)
-    return np.power(sq_sum/len(data),0.5)
-    
+    return np.power(sq_sum/len(data),0.5) 
 
 def load_patient_file(path):
     # code to load data goes here
+    State.Patient = pd.read_excel(path)
+    
     pass
 
     
 def load_control_file(path):
     # code to load data goes here
+    State.Control = pd.read_excel(path)
     pass
 
     
