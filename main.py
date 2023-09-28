@@ -28,6 +28,8 @@ def rms(data):
     
 
 def load_patient_file(path):
+    filename = "PatientA.xlsx"
+    df = pd.read_excel(filename)
     # code to load data goes here
     pass
 
