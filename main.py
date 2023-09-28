@@ -1,7 +1,9 @@
+#experimenting with GITs
 from ui import Ui, UiElement
 import pandas as pd ### not in requirements file - need to add this
 import matplotlib.pyplot as plt
 import numpy as np
+
 
 LGPS_list=['LPelTilt','LHipFlex','LKneeFlex','LAnkDors',
            'LPelObl','LHipAbd','LPelRot','LHipRot','LFootProg']
@@ -29,13 +31,13 @@ def rms(data):
 
 def load_patient_file(path):
     # code to load data goes here
-    pass
+    State.patient = pd.read_excel(path)
+    #return State.patient
 
     
 def load_control_file(path):
-    # code to load data goes here
-    pass
-
+    State.control = pd.read_excel(path)
+    #return State.control
     
 def calc_GPS():
     # code to load data goes here
@@ -79,6 +81,13 @@ def calc_GPS():
 def show_graph(path):
     # path is the name of the angle from the drop down list
     fig,ax = plt.subplots()
+
+    ax.plot(State.patient['L'+path],'r')
+    ax.plot(State.patient['R'+path],'g')
+    ax.plot(State.control[path], 'b')
+        
+            
+        
     # your code to plot 3 line (patient left in red, patient right in green, control in blue)
 
     State.ui.plot(fig) # this will send the plot to the canvas
