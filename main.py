@@ -140,4 +140,5 @@ if __name__ == '__main__':
     ui.add_radio_callback(UiElement.RADIO_PLOT, radio_choice)
     
     
-    ui.mainloop()
+    ui.mainloop() #experimenting
+    
