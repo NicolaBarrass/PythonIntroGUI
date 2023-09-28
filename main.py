@@ -81,6 +81,13 @@ def calc_GPS():
 def show_graph(path):
     # path is the name of the angle from the drop down list
     fig,ax = plt.subplots()
+
+    ax.plot(State.patient['L'+path],'r')
+    ax.plot(State.patient['R'+path],'g')
+    ax.plot(State.control[path], 'b')
+        
+            
+        
     # your code to plot 3 line (patient left in red, patient right in green, control in blue)
 
     State.ui.plot(fig) # this will send the plot to the canvas
