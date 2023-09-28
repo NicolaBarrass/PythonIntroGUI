@@ -13,7 +13,6 @@ GPS_list=['LPelTilt','LHipFlex','LKneeFlex','LAnkDors',
            'RHipFlex','RKneeFlex','RAnkDors',
            'RHipAbd','RHipRot','RFootProg']
 
-
 class State:
     patient = []
     control = [] 
@@ -28,9 +27,13 @@ def rms(data):
     
 
 def load_patient_file(path):
-    # code to load data goes here
-    pass
-
+    try:
+        # Load data from the single sheet 'PatientA'
+        data_df = pd.read_excel(path, sheet_name='PatientA')
+        return data_df
+    except Exception as e:
+        print(f"Error loading data from Excel file: {e}")
+        return None
     
 def load_control_file(path):
     # code to load data goes here
