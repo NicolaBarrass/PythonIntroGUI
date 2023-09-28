@@ -121,7 +121,7 @@ def radio_choice(choice):
             ax.set_xticks(x + width, angles)
             ax.legend(loc='upper left', ncols=2)
             ax.set_ylim(0, 20)
-            
+        #experimenting with GIT     
             
             State.ui.plot(fig)
             
