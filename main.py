@@ -28,12 +28,12 @@ def rms(data):
     
 
 def load_patient_file(path):
-    # code to load data goes here
+    State.Patient = pd.read_excel(path)
     pass
 
     
 def load_control_file(path):
-    # code to load data goes here
+    State.Control = pd.read_excel(path)
     pass
 
     
@@ -141,4 +141,3 @@ if __name__ == '__main__':
     
     
     ui.mainloop()
-#just checking to see if it works
