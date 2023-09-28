@@ -202,3 +202,5 @@ class Ui:
 
         self.graph = Frame(root, width=400, height=300, padx=10, pady=10, background="black")
         self.graph.grid(row=2, columnspan=2)
+
+#comment
