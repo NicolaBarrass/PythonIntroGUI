@@ -1,3 +1,5 @@
+#Task file
+
 from ui import Ui, UiElement
 import pandas as pd ### not in requirements file - need to add this
 import matplotlib.pyplot as plt
@@ -24,17 +26,18 @@ def rms(data):
     sq_sum=0
     for i in range(len(data)):
         sq_sum=sq_sum+ np.power((data[i]),2)
-    return np.power(sq_sum/len(data),0.5)
-    
+    return np.power(sq_sum/len(data),0.5) 
 
 def load_patient_file(path):
     # code to load data goes here
-    pass
+    State.patient = pd.read_excel(path)
+    
 
     
 def load_control_file(path):
     # code to load data goes here
-    pass
+    State.control = pd.read_excel(path)
+    
 
     
 def calc_GPS():
@@ -79,6 +82,23 @@ def calc_GPS():
 def show_graph(path):
     # path is the name of the angle from the drop down list
     fig,ax = plt.subplots()
+
+    if path == 'HipFlex':
+        ax.plot(State.patient['LHipFlex'],'r')
+        ax.plot(State.patient['RHipFlex'], 'g')
+        ax.plot(State.control['HipFlex'], 'b')
+    elif path == 'KneeFlex':
+        ax.plot(State.patient['LKneeFlex'],'r')
+        ax.plot(State.patient['RKneeFlex'], 'g')
+        ax.plot(State.control['KneeFlex'], 'b')
+    elif path == 'PelTilt':
+        ax.plot(State.patient['LPelTilt'],'r')
+        ax.plot(State.patient['RPelTilt'], 'g')
+        ax.plot(State.control['PelTilt'], 'b')
+    else:
+        ax.plot(State.patient['LAnkDors'],'r')
+        ax.plot(State.patient['RAnkDors'], 'g')
+        ax.plot(State.control['AnkDors'], 'b')
     # your code to plot 3 line (patient left in red, patient right in green, control in blue)
 
     State.ui.plot(fig) # this will send the plot to the canvas
